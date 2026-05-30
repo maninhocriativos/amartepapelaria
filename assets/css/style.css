@@ -409,44 +409,270 @@ body {
     }
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 768px) {
     .profile {
-        padding: 40px 20px 30px;
+        padding: 35px 20px 25px;
+    }
+
+    .profile-image {
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        width: 140px;
+        height: 140px;
+        border: 3px solid var(--secondary-color);
     }
 
     .profile-name {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 5px;
     }
 
     .profile-description {
-        font-size: 1rem;
+        font-size: 1.05rem;
+        margin-bottom: 15px;
+    }
+
+    .social-links {
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .social-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 
     .links-section {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
+        margin: 25px 0;
     }
 
     .link-card {
-        padding: 25px;
+        padding: 25px 20px;
+    }
+
+    .link-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .link-card p {
+        font-size: 0.95rem;
+    }
+
+    .link-icon {
+        font-size: 3rem;
+    }
+
+    .link-button {
+        padding: 10px 22px;
+        font-size: 0.9rem;
+    }
+
+    .stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 40px 0;
+        padding: 30px 0;
+    }
+
+    .stat h3 {
+        font-size: 1.7rem;
+    }
+
+    .stat p {
+        font-size: 0.85rem;
     }
 
     .newsletter {
         padding: 30px 20px;
+        margin: 30px 0;
+    }
+
+    .newsletter h2 {
+        font-size: 1.6rem;
+    }
+
+    .newsletter p {
+        font-size: 1rem;
     }
 
     .newsletter-form {
         flex-direction: column;
+        gap: 12px;
     }
 
     .newsletter-form input,
     .newsletter-form button {
         width: 100%;
+        padding: 12px 15px;
+    }
+
+    .footer {
+        padding: 30px 20px 15px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    body {
+        line-height: 1.7;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .profile {
+        padding: 25px 15px 20px;
+    }
+
+    .profile-image {
+        margin-bottom: 12px;
+    }
+
+    .logo {
+        width: 120px;
+        height: 120px;
+        border: 3px solid var(--secondary-color);
+        padding: 10px;
+    }
+
+    .profile-name {
+        font-size: 2rem;
+        margin-bottom: 3px;
+        letter-spacing: 1px;
+    }
+
+    .profile-description {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+
+    .social-links {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+
+    .links-section {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 20px 0;
+    }
+
+    .link-card {
+        padding: 20px 15px;
+        border-radius: 15px;
+    }
+
+    .link-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 6px;
+    }
+
+    .link-card p {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    .link-icon {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+    }
+
+    .link-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
     .stats {
         grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 30px 0;
+        padding: 25px 0;
+    }
+
+    .stat {
+        padding: 15px 0;
+    }
+
+    .stat h3 {
+        font-size: 1.5rem;
+        margin-bottom: 3px;
+    }
+
+    .stat p {
+        font-size: 0.85rem;
+    }
+
+    .newsletter {
+        padding: 25px 15px;
+        margin: 25px 0;
+        border-radius: 15px;
+    }
+
+    .newsletter h2 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .newsletter p {
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .newsletter-form input {
+        padding: 11px 12px;
+        font-size: 16px;
+        border-radius: 20px;
+    }
+
+    .newsletter-form button {
+        padding: 11px 12px;
+        font-size: 0.9rem;
+        border-radius: 20px;
+    }
+
+    .footer {
+        padding: 25px 15px 12px;
+        font-size: 0.85rem;
+    }
+
+    .footer-links {
+        gap: 12px;
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .footer-links a {
+        display: block;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .profile-name {
+        font-size: 1.8rem;
+        letter-spacing: 0.5px;
     }
 
     .logo {
@@ -454,35 +680,24 @@ body {
         height: 100px;
     }
 
-    .social-links {
-        gap: 10px;
-    }
-
-    .social-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .profile-name {
-        font-size: 1.5rem;
-    }
-
-    .link-icon {
-        font-size: 2rem;
+    .link-card {
+        padding: 15px 12px;
     }
 
     .link-card h3 {
         font-size: 1.1rem;
     }
 
-    .stat h3 {
-        font-size: 1.5rem;
+    .link-icon {
+        font-size: 2.5rem;
     }
 
-    .newsletter h2 {
-        font-size: 1.4rem;
+    .link-button {
+        padding: 9px 18px;
+        font-size: 0.85rem;
+    }
+
+    .stat h3 {
+        font-size: 1.3rem;
     }
 }
