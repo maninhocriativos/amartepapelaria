@@ -1,23 +1,39 @@
-# Cloudflare Workers configuration
+# Cloudflare Workers configuration for Amarte Bio Links
 name = "amarte-bio-links"
 main = "src/index.js"
 compatibility_date = "2024-12-16"
+type = "javascript"
 
 # Site configuration for static assets
+[site]
+bucket = "."
+include = ["*.html", "assets/**/*"]
+exclude = ["src/**/*", "*.md", ".git/**/*"]
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "amarte-contacts"
+database_id = "YOUR_DATABASE_ID"
+
+# Environment configuration
 [env.production]
 name = "amarte-bio-links-prod"
+routes = [
+  { pattern = "amartepapelaria.com.br/*", zone_name = "amartepapelaria.com.br" },
+  { pattern = "links.amartepapelaria.com.br/*", zone_name = "amartepapelaria.com.br" }
+]
 
-# KV Namespace bindings (optional, for analytics)
-[[kv_namespaces]]
-binding = "ANALYTICS"
-id = "your-kv-namespace-id"
-preview_id = "your-preview-kv-namespace-id"
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "amarte-contacts"
+database_id = "YOUR_DATABASE_ID"
 
 # Build configuration
 [build]
 command = "echo 'No build needed'"
 cwd = "./"
 
-# Triggers for deployment
+# Triggers for scheduled jobs
 [triggers]
-crons = []
+crons = ["0 0 * * *"]

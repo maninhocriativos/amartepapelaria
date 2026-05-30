@@ -133,6 +133,94 @@ function updateSocialLinks() {
     });
 }
 
+// Modal Contato
+const modal = document.getElementById('contactModal');
+const contactForm = document.getElementById('contactForm');
+const successMessage = document.getElementById('successMessage');
+const closeBtn = document.querySelector('.close');
+const modalTriggers = document.querySelectorAll('[data-modal="contact"]');
+
+// Abrir modal
+modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+        contactForm.style.display = 'block';
+        successMessage.style.display = 'none';
+        contactForm.reset();
+    });
+});
+
+// Fechar modal
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
+});
+
+// Formatar telefone
+function formatPhone(phone) {
+    const cleaned = phone.replace(/\D/g, '');
+    if (cleaned.length === 11) {
+        return '55' + cleaned;
+    }
+    return '55' + cleaned;
+}
+
+// Enviar formulário
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const instagram = document.getElementById('instagram').value;
+    const service = document.getElementById('service').value;
+
+    const whatsappPhone = formatPhone(phone);
+
+    // Mensagem formatada para WhatsApp
+    const message = `*Olá Amarte!*%0A%0A*Nome:* ${encodeURIComponent(name)}%0A*Telefone:* ${encodeURIComponent(phone)}%0A*Instagram:* ${encodeURIComponent(instagram)}%0A*Serviço:* ${encodeURIComponent(service)}%0A%0AEstou entrando em contato através do seu link bio!`;
+
+    // Salvar no D1 (Cloudflare)
+    try {
+        const response = await fetch('/api/save-contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name,
+                phone,
+                instagram,
+                service,
+                timestamp: new Date().toISOString()
+            })
+        });
+
+        if (response.ok) {
+            // Abrir WhatsApp
+            window.open(`https://wa.me/${whatsappPhone}?text=${message}`, '_blank');
+
+            // Mostrar mensagem de sucesso
+            contactForm.style.display = 'none';
+            successMessage.style.display = 'block';
+
+            // Fechar modal após 3 segundos
+            setTimeout(() => {
+                modal.classList.remove('active');
+            }, 3000);
+        }
+    } catch (error) {
+        console.error('Erro ao salvar contato:', error);
+        // Mesmo assim abrir WhatsApp
+        window.open(`https://wa.me/${whatsappPhone}?text=${message}`, '_blank');
+    }
+});
+
 // Initialize
 updateSocialLinks();
 

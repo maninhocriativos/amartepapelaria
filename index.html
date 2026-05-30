@@ -29,8 +29,8 @@
                 <a href="#" class="social-icon" title="YouTube">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="#" class="social-icon" title="Twitter">
-                    <i class="fab fa-twitter"></i>
+                <a href="#" class="social-icon" title="WhatsApp" data-modal="contact">
+                    <i class="fab fa-whatsapp"></i>
                 </a>
             </div>
         </section>
@@ -79,7 +79,7 @@
                 </div>
                 <h3>Contato</h3>
                 <p>Entre em contato comigo</p>
-                <a href="#" class="link-button">Enviar Mensagem</a>
+                <a href="#" class="link-button" data-modal="contact">Enviar Mensagem</a>
             </div>
 
             <div class="link-card">
@@ -127,6 +127,51 @@
                 <a href="#">Contato</a>
             </div>
         </footer>
+    </div>
+
+    <!-- Modal Contato -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Deixe seu Recado</h2>
+            <p class="modal-subtitle">Preencha os dados e envie uma mensagem via WhatsApp</p>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input type="text" id="instagram" name="instagram" placeholder="@seu_usuario" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Qual serviço deseja?</label>
+                    <select id="service" name="service" required>
+                        <option value="">Selecione um serviço</option>
+                        <option value="Conteúdo Exclusivo">Conteúdo Exclusivo</option>
+                        <option value="Portfólio">Portfólio</option>
+                        <option value="Loja">Loja</option>
+                        <option value="Apoio">Apoio</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar via WhatsApp</button>
+            </form>
+
+            <div id="successMessage" class="success-message" style="display: none;">
+                <h3>✅ Enviado com sucesso!</h3>
+                <p>Sua mensagem foi enviada para WhatsApp e registrada.</p>
+            </div>
+        </div>
     </div>
 
     <script src="assets/js/script.js"></script>
