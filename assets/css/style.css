@@ -1,15 +1,14 @@
-/* Color Palette - Premium (Inspirada no Logo Amarte) */
+/* Color Palette - Amarte Brand */
 :root {
-    --primary-color: #1F3B5C;      /* Azul Marinho Escuro */
-    --secondary-color: #E8A89F;    /* Rosa Coral Premium */
-    --accent-color: #D4A7A2;       /* Rosa Coral Secundária */
-    --gold-color: #E8A89F;         /* Rosa Coral Destaque */
-    --light-bg: #F8F7F6;           /* Fundo Claro Elegante */
-    --dark-bg: #1A2D42;            /* Azul Marinho Escuro Fundo */
+    --primary-color: #1A2942;      /* Azul Marinho Escuro */
+    --secondary-color: #C9997A;    /* Rosa Terracota Premium */
+    --accent-color: #C9997A;       /* Rosa Destaque */
+    --light-bg: #F5EFE7;           /* Bege/Creme - Background Principal */
+    --cream-dark: #EDE5DC;         /* Bege mais escuro */
     --white: #FFFFFF;
-    --text-light: #1F3B5C;         /* Azul para texto */
-    --text-muted: #7A8BA3;         /* Azul acinzentado */
-    --border-color: rgba(31, 59, 92, 0.15);
+    --text-primary: #1A2942;       /* Azul Marinho - Texto Principal */
+    --text-light: #5A6B7F;         /* Azul acinzentado */
+    --border-color: rgba(201, 153, 122, 0.2);
 }
 
 /* Reset e Base */
@@ -24,11 +23,11 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    background-color: var(--primary-color);
-    color: var(--white);
+    font-family: 'Georgia', 'Garamond', serif;
+    background-color: var(--light-bg);
+    color: var(--text-primary);
     overflow-x: hidden;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 /* Container */
@@ -47,7 +46,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--cream-dark) 100%);
     z-index: -1;
 }
 
@@ -66,33 +65,34 @@ body {
 }
 
 .logo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 4px solid var(--secondary-color);
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 50px rgba(232, 168, 159, 0.8), inset 0 0 30px rgba(232, 168, 159, 0.3);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 40px rgba(201, 153, 122, 0.3), inset 0 0 30px rgba(201, 153, 122, 0.2);
     object-fit: contain;
 }
 
 .profile-name {
     font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--white);
+    font-weight: 400;
+    color: var(--text-primary);
     margin-bottom: 5px;
-    letter-spacing: 2px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    letter-spacing: 3px;
+    font-style: normal;
     display: block;
 }
 
 .profile-description {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 1);
+    color: var(--text-primary);
     margin-bottom: 20px;
-    font-weight: 500;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+    font-style: italic;
     display: block;
+    letter-spacing: 0.5px;
 }
 
 /* Social Links */
@@ -107,26 +107,26 @@ body {
 }
 
 .social-icon {
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    background: linear-gradient(135deg, rgba(232, 168, 159, 0.3), rgba(31, 59, 92, 0.1));
+    background: linear-gradient(135deg, rgba(201, 153, 122, 0.15), rgba(26, 41, 66, 0.08));
     border: 3px solid var(--secondary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--text-primary);
     text-decoration: none;
     transition: all 0.3s ease;
     font-size: 1.5rem;
 }
 
 .social-icon:hover {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(135deg, var(--secondary-color), rgba(201, 153, 122, 0.8));
     color: var(--white);
-    transform: translateY(-8px) scale(1.1);
-    box-shadow: 0 15px 35px rgba(232, 168, 159, 0.6);
-    border-color: var(--white);
+    transform: translateY(-8px) scale(1.15);
+    box-shadow: 0 15px 35px rgba(201, 153, 122, 0.5);
+    border-color: var(--secondary-color);
 }
 
 /* Links Section */
@@ -141,10 +141,10 @@ body {
 }
 
 .link-card {
-    background: linear-gradient(135deg, rgba(232, 168, 159, 0.2), rgba(255, 255, 255, 0.1));
-    border: 2px solid rgba(232, 168, 159, 0.3);
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid rgba(201, 153, 122, 0.3);
     border-radius: 20px;
-    padding: 30px;
+    padding: 35px;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
@@ -166,9 +166,9 @@ body {
 
 .link-card:hover {
     border-color: var(--secondary-color);
-    background: linear-gradient(135deg, rgba(232, 168, 159, 0.15), rgba(31, 59, 92, 0.1));
-    box-shadow: 0 15px 40px rgba(232, 168, 159, 0.3);
-    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 50px rgba(201, 153, 122, 0.25);
+    transform: translateY(-8px);
 }
 
 .link-card:hover::before {
@@ -179,12 +179,12 @@ body {
 
 .link-card.premium {
     border: 2px solid var(--secondary-color);
-    background: linear-gradient(135deg, rgba(232, 168, 159, 0.2), rgba(31, 59, 92, 0.1));
+    background: linear-gradient(135deg, rgba(201, 153, 122, 0.12), rgba(255, 255, 255, 0.8));
 }
 
 .link-card.premium:hover {
     border-color: var(--secondary-color);
-    box-shadow: 0 15px 40px rgba(232, 168, 159, 0.4);
+    box-shadow: 0 20px 50px rgba(201, 153, 122, 0.35);
 }
 
 .link-icon {
@@ -192,6 +192,7 @@ body {
     margin-bottom: 15px;
     color: var(--secondary-color);
     transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
 .link-card.premium .link-icon {
@@ -206,13 +207,13 @@ body {
 .link-card h3 {
     font-size: 1.5rem;
     margin-bottom: 8px;
-    color: var(--white);
-    font-weight: 700;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .link-card p {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: var(--text-light);
     margin-bottom: 15px;
     font-weight: 400;
 }
@@ -220,26 +221,27 @@ body {
 /* Link Button */
 .link-button {
     display: inline-block;
-    padding: 10px 25px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--secondary-color), rgba(201, 153, 122, 0.9));
     color: var(--white);
     text-decoration: none;
     border-radius: 25px;
     border: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
     cursor: pointer;
     font-size: 0.95rem;
-    box-shadow: 0 5px 15px rgba(232, 168, 159, 0.3);
+    box-shadow: 0 5px 15px rgba(201, 153, 122, 0.3);
+    font-family: 'Georgia', serif;
 }
 
 .link-card.premium .link-button {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: linear-gradient(135deg, var(--secondary-color), rgba(201, 153, 122, 0.85));
 }
 
 .link-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(232, 168, 159, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(201, 153, 122, 0.4);
 }
 
 .link-button:active {
@@ -253,8 +255,8 @@ body {
     gap: 20px;
     margin: 60px 0;
     padding: 40px 0;
-    border-top: 2px solid rgba(232, 168, 159, 0.3);
-    border-bottom: 2px solid rgba(232, 168, 159, 0.3);
+    border-top: 2px solid rgba(201, 153, 122, 0.3);
+    border-bottom: 2px solid rgba(201, 153, 122, 0.3);
     animation: slideUp 0.8s ease-out 0.4s both;
 }
 
@@ -266,17 +268,18 @@ body {
     font-size: 2rem;
     color: var(--secondary-color);
     margin-bottom: 5px;
+    font-weight: 400;
 }
 
 .stat p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
 /* Newsletter */
 .newsletter {
-    background: linear-gradient(135deg, rgba(232, 168, 159, 0.2), rgba(255, 255, 255, 0.1));
-    border: 2px solid rgba(232, 168, 159, 0.3);
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid rgba(201, 153, 122, 0.3);
     border-radius: 20px;
     padding: 40px;
     text-align: center;
@@ -288,11 +291,12 @@ body {
 .newsletter h2 {
     font-size: 1.8rem;
     margin-bottom: 10px;
-    color: var(--white);
+    color: var(--text-primary);
+    font-weight: 400;
 }
 
 .newsletter p {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--text-light);
     margin-bottom: 20px;
 }
 
@@ -311,13 +315,14 @@ body {
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid var(--secondary-color);
     border-radius: 25px;
-    color: var(--primary-color);
+    color: var(--text-primary);
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
 }
 
 .newsletter-form input::placeholder {
-    color: rgba(31, 59, 92, 0.6);
+    color: rgba(26, 41, 66, 0.5);
 }
 
 .newsletter-form input:focus {
@@ -328,27 +333,28 @@ body {
 
 .newsletter-form button {
     padding: 12px 30px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--secondary-color), rgba(201, 153, 122, 0.9));
     color: var(--white);
     border: none;
     border-radius: 25px;
-    font-weight: 600;
+    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(232, 168, 159, 0.3);
+    box-shadow: 0 5px 15px rgba(201, 153, 122, 0.3);
+    font-family: 'Georgia', serif;
 }
 
 .newsletter-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(232, 168, 159, 0.5);
+    box-shadow: 0 10px 25px rgba(201, 153, 122, 0.4);
 }
 
 /* Footer */
 .footer {
     text-align: center;
     padding: 40px 20px 20px;
-    border-top: 2px solid rgba(232, 168, 159, 0.3);
-    color: rgba(255, 255, 255, 0.7);
+    border-top: 2px solid rgba(201, 153, 122, 0.3);
+    color: var(--text-light);
     font-size: 0.9rem;
 }
 
@@ -367,7 +373,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--text-primary);
     text-decoration: underline;
 }
 
