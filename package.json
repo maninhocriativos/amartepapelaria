@@ -1,0 +1,23 @@
+{
+  "name": "amarte-bio-links",
+  "version": "1.0.0",
+  "description": "Premium bio links page for Amarte",
+  "author": "Amarte",
+  "license": "MIT",
+  "scripts": {
+    "dev": "wrangler pages dev --local",
+    "deploy": "wrangler pages deploy",
+    "build": "echo 'No build needed'",
+    "preview": "open index.html"
+  },
+  "devDependencies": {
+    "wrangler": "^3.x"
+  },
+  "keywords": [
+    "amarte",
+    "bio-links",
+    "cloudflare",
+    "premium",
+    "portfolio"
+  ]
+}
