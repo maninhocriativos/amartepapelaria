@@ -1,0 +1,16 @@
+{
+  "name": "amarte-bio-links",
+  "type": "javascript",
+  "main": "src/index.js",
+  "env": {
+    "production": {
+      "name": "amarte-bio-links-prod",
+      "routes": [
+        {
+          "pattern": "*",
+          "zone_name": "amarte.com"
+        }
+      ]
+    }
+  }
+}
